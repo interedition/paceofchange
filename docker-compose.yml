@@ -1,0 +1,18 @@
+# Docker compose file to make mapping ports and volumes easier.
+version: "2"
+
+services:
+  paceofchange:
+    container_name: paceofchange
+    image: paceofchange
+    build: .
+    ports:
+      - "8888:8888"
+  paceofchange-dev:
+    container_name: paceofchange-dev
+    image: paceofchange
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
