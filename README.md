@@ -16,6 +16,10 @@ To make the execution of the code as easy as possible we have include a `Dockerf
 
 First, install [Docker](https://www.docker.com/products/docker). Docker provides an easy installer for [Mac](https://www.docker.com/products/docker#/mac) and [Windows](https://www.docker.com/products/docker#/windows). Once this is up and running you will have everything you need to be able to recreate the environment we used to defactor pace of change.
 
+**IMPORTANT NOTE**: To execute this notebook you need to allocate at least **4 gigabytes** to Docker. This mainly affects Docker for Mac and Windows. By default Docker only allocates 2 gigabytes so you need to go into the Docker preferences and boost the amount of memory to 4 gigabytes.
+Mac - https://docs.docker.com/docker-for-mac/#/preferences  
+Windows - https://docs.docker.com/docker-for-windows/#advanced
+
 From the root directory of the repository run the following command:
 
 `docker build --rm -t paceofchange .`
