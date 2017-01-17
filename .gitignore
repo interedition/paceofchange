@@ -1,3 +1,7 @@
 .ipynb_checkpoints/
 tmp
 .DS_Store
+
+mainmodelpredictions.coefs.csv
+
+mainmodelpredictions.csv
