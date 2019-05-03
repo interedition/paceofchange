@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Hinsen&amp;#39;s Layers of Scientific Software</title>
-  <meta name="description" content="Hinsen’s Layers of Scientific Software">
+  <title>GitHub repository</title>
+  <meta name="description" content="Defactoring ‘Pace of Change’">
 
-  <link rel="canonical" href="/YOUR%20URL//defactoring/021_hinsen-s-layers-of-scientific-software.html">
+  <link rel="canonical" href="/YOUR%20URL//repository.html">
   <link rel="alternate" type="application/rss+xml" title="Defactoring ‘Pace of Change’" href="/YOUR%20URL//feed.xml">
 
-  <meta property="og:url"         content="/YOUR%20URL//defactoring/021_hinsen-s-layers-of-scientific-software.html" />
+  <meta property="og:url"         content="/YOUR%20URL//repository.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Hinsen&amp;#39;s Layers of Scientific Software" />
-<meta property="og:description" content="Hinsen’s Layers of Scientific Software" />
+<meta property="og:title"       content="GitHub repository" />
+<meta property="og:description" content="Defactoring ‘Pace of Change’" />
 <meta property="og:image"       content="" />
 
 
@@ -25,15 +25,15 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "YOUR URL//defactoring/021_hinsen-s-layers-of-scientific-software.html",
+    "YOUR URL//repository.html",
   "headline":
-    "Hinsen&amp;#39;s Layers of Scientific Software",
+    "GitHub repository",
   "datePublished":
     "2019-05-03T23:54:03+02:00",
   "dateModified":
     "2019-05-03T23:54:03+02:00",
   "description":
-    "Hinsen’s Layers of Scientific Software",
+    "Defactoring ‘Pace of Change’",
   "author": {
     "@type": "Person",
     "name": "Matthew Burton and Joris van Zundert"
@@ -532,7 +532,7 @@ initFunction(initQuery);
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry "
+        <a class="c-sidebar__entry c-sidebar__entry--active"
           href="/repository.html"
         >
           
@@ -608,7 +608,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry c-sidebar__entry--active"
+                <a class="c-sidebar__entry "
                   href="/defactoring/021_hinsen-s-layers-of-scientific-software.html"
                 >
                   
@@ -881,15 +881,6 @@ initFunction(initQuery);
 <!-- TOC will only show up if it has at least one item -->
 
 
-  <aside class="sidebar__right">
-    <nav class="onthispage">
-      <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
-      <ul class="toc__menu">
-  <li><a href="#hinsens-layers-of-scientific-software">Hinsen’s Layers of Scientific Software</a></li>
-</ul>
-    </nav>
-  </aside>
-
 
       
       <main class="c-textbook__page" tabindex="-1">
@@ -910,113 +901,22 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <h3 id="hinsens-layers-of-scientific-software">Hinsen’s Layers of Scientific Software</h3>
+              <h1 id="defactoring-pace-of-change">Defactoring ‘Pace of Change’</h1>
 
-<p>Beyond the theoretical and methodological challenges, reading and
-reviewing code introduces practical challenges as well. Foremost is the
-problem of determining what code is actually in scope for these
-practices. The rabbit hole runs deep as research code is built on top of
-standard libraries, which are built on top of programming languages,
-which are built on top of operating systems, and on and on.
-Methodologically, a boundary must be drawn between the epistemologically
-salient code and the foundational context within which it executes.
-Hinsen (2017) makes a useful distinction that divides scientific
-software into four layers. First, there is a layer of <em>general
-software</em>. Generalized computational infrastructure like operating
-systems, compilers, and user interfaces fall into this category. Generic
-tools like Microsoft Word or Apache OpenOffice or general-purpose
-programming language like Python or C, while heavily used in scientific
-domains, also have a rich life outside of science (and academia more
-broadly). The second layer comprises <em>scientific software</em>.
-Applications, libraries, or software packages that are not as general
-purpose as layer one, rather they are designed for use in scientific or
-academic activities. For example, Stata or SPSS for statistical
-analysis, Open-MPI for parallel computing in high performance computing
-applications, or Globus as a general tool for managing data transfers,
-AntConc for text corpus analytics, Classical Text Editor to create
-editions of ancient texts, or Zotero for bibliographic data management.
-A third layer comprises <em>disciplinary software</em>, libraries for use in
-specific epistemological contexts for analysis of which the Natural
-Language Toolkit (NLTK) or the Syuzhet R package for literary analysis
-are excellent examples. The design of Syuzhet means it can be used in a
-variety of analyses, not just the analysis performed by Jockers (2014,
-2015). Disciplinary software is distinct from lower layers as it embeds
-certain epistemological and methodological assumptions into the design
-of the software package that may not hold across disciplinary contexts.
-Lastly, there is a fourth layer of <em>bespoke software</em>. This layer
-comprises project specific code developed in pursuit of the very
-specific set of tasks associated with a particular analysis. This is the
-plumbing connecting other layers together to accomplish a desired
-outcome. Unlike the previous layers, this code is not meant to be
-generalized or reused in other contexts.</p>
-
-<p><img src="/images/fig_001_hinsen.png" alt="Fig. 1: Hinsen's model of layers of scientific software" /></p>
-
-<p><em>Fig.1 : Hinsen’s layers of scientific software</em></p>
-
-<p>As argued above: with an ever-increasing frequency project specific
-<em>bespoke code</em> is created and used in textual scholarship and literary
-studies (cf. for instance Enderle 2016; Jockers 2013; Piper 2015;
-Rybicki, Hoover, and Kestemont 2014; and Underwood 2014). The
-algorithms, code, and software underpinning the analyses in these
-examples are not completely standardized ‘off the shelf’ software
-projects or tools. These codebases are not a software package such as
-AntConc that can be viewed as a generic distributable tool. Instead
-these codebases are (in Hinsen’s model) the fourth layer of bespoke
-code: they are one-off highly specific and complex analytical engines,
-tailored to solving one highly specific research question based on one
-specific set of data. Reuse, scalability, and ease-of-use
-are—justifiably (Baldrigde 2015)—not specific aims of these code
-objects. This is code meant only to run once.</p>
-
-<p>The words, prose, narrative of a scholarly article express a rhetorical
-procedure. When reviewing a scholarly article, the focus is on the
-underlying argument and its attending evidence. Scholarly evaluation
-pertains not to the specifics of the prose, the style of writing, the
-sentence structure—unless of course they are so bad as to distract
-from the underlying argument. One could argue, paying attention to the
-details of code is equivalent to paying attention to the wordsmithing
-and thus missing the forest for the trees, that is, fetishizing the
-material representation at the expense of the methodological
-abstraction. However, the significant difference is that the words are
-plainly visible to any and all readers, whereas the code is often hidden
-away in a GitHub repository (if we are lucky) or on a disk somewhere in
-a scholar’s office (or in cloud storage). We argue the computational and
-data driven arguments are missing the material expression (the code) of
-their methodological procedures. The prosaic descriptions currently
-found in computational literary history and the digital humanities are
-not sufficient. If the prose is an expression of the argument, with
-charts and numbers and models as evidence then the code, which is the
-expression of the methodological procedures that produced the evidence,
-is just as important as the words. Our thinking is not unlike
-Kirschenbaum’s (2008) forensic approaches to writing in that just as
-digital text has a material trace, methodological analysis also has a
-materiality inscribed in code. However, we perhaps go father to argue
-these inscriptions should be surfaced in publication. Why write an
-abstract prosaic description of methodological procedures divorced from
-the codified expression of those procedures? Why not interweave both?</p>
-
-<p>We contend that because of their specificity and their pivotal analytic
-function we must regard bespoke code as an inherent part of the
-scholarly argument and discourse. And as such, bespoke code needs
-specific readership and rigorous review, like any argument in humanities
-research. How the specific literacy for this should be developed and
-enacted is, however, an unexplored frontier. We introduce <em>defactoring</em>
-as a method for reading, critically analyzing, and evaluating bespoke
-code of computational scholarship.</p>
+<p>The contents of this book, the Jupyter Notebook accompanying it and all additional code is available in <a href="https://github.com">GitHub</a>: <a href="https://github.com/interedition/paceofchange">https://github.com/interedition/paceofchange</a>. This repository also contains a fork of the original code by Ted Underwood and Jordan Sellers that this Jupyter Book investigates.</p>
 
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/defactoring/020_reading-and-evaluating">
-      〈 <span class="u-margin-right-tiny"></span> Reading and Evaluating Code in Lit...
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/abstract">
+      〈 <span class="u-margin-right-tiny"></span> Summary
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/defactoring/030_defactoring">
-      Defactoring <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/defactoring/010_introduction">
+      Introduction <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>

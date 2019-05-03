@@ -3,7 +3,7 @@ redirect_from:
   - "/defactoring/010-introduction"
 title: 'Introduction'
 prev_page:
-  url: /https://github.com/interedition/paceofchange
+  url: /repository
   title: 'GitHub repository'
 next_page:
   url: /defactoring/020_reading-and-evaluating

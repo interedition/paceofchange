@@ -26,10 +26,10 @@
   url: /abstract
   not_numbered: true
 
-# External link
+# Encapsulated External link
 - title: GitHub repository
-  url: https://github.com/interedition/paceofchange
-  external: true
+  url: /repository
+  #external: true
   not_numbered: true
 
 # Adds a searchbar link
@@ -99,5 +99,6 @@
 - title: References
   url: /defactoring/090_references
   not_numbered: true
+
 
 - divider: true
