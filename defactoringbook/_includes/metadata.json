@@ -17,7 +17,7 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Data 100 at UC Berkeley",
+    "name": "Huygens Institute & University of Pittsburgh",
     "logo": {
       "@type": "ImageObject",
       "url": "{{ site.logo | prepend: site.baseurl | prepend: site.url }}",

@@ -17,8 +17,8 @@
 #######################################################################################
 # Jekyll site settings
 title: Defactoring ‘Pace of Change’
-author: Matthew Burton and Joris van Zundert
-email: mcburton@gmail.com; joris.van.zundert@gmail.com
+author: Joris van Zundert;Matthew Burton
+email: joris.van.zundert@gmail.com;mcburton@gmail.com
 description: >-
   We present defactoring, a methodological experiment in peer reviewing, editing, and critically examining bespoke academic code.
 
