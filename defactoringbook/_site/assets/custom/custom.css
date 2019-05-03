@@ -1,0 +1,16 @@
+/* Put your custom CSS here */
+.left {
+    margin-left: 0px;
+}
+.footnotes ol {
+    padding-top: 10px;
+}
+.footnotes:before {
+    content: " ";
+    width: 200px;
+    border-top: 1px solid black;
+    position: absolute;
+}
+.footnotes ol {
+  font-size: 80%;
+}

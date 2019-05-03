@@ -1,0 +1,103 @@
+# This file contains the order and numbering for all sections in the book.
+#
+# It is a sample TOC file to help you get started. Fill it out with entries
+# for your own content.
+#
+# Each entry has the following schema:
+#
+# - title: mytitle   # Title of chapter or section
+#   url: /myurl  # URL of section relative to the /content/ folder.
+#   sections:  # Contains a list of more entries that make up the chapter's sections
+#   not_numbered: true  # if the section shouldn't have a number in the sidebar
+#     (e.g. Introduction or appendices)
+#   expand_sections: true  # if you'd like the sections of this chapter to always
+#     be expanded in the sidebar.
+#   external: true  # Whether the URL is an external link or points to content in the book
+#
+# Below are some special values that trigger specific behavior:
+# - search: true  # Will provide a link to a search page
+# - divider: true  # Will insert a divider in the sidebar
+# - header: My Header  # Will insert a header with no link in the sidebar
+#
+# See the links below for an example.
+
+# Top-level page
+- title: Summary
+  url: /abstract
+  not_numbered: true
+
+# External link
+- title: GitHub repository
+  url: https://github.com/interedition/paceofchange
+  external: true
+  not_numbered: true
+
+# Adds a searchbar link
+- title: Search
+  search: true
+
+# Divider for meta-pages and content page
+- divider: true
+
+# Add a header and sample content section
+- header: Article Content
+
+# A chapter w/ a collection of sections beneath it
+- title: Introduction
+  url: /defactoring/010_introduction
+  not_numbered: true
+
+- title: Reading and Evaluating Code in Litrary Scholarship
+  url: /defactoring/020_reading-and-evaluating
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Hinsen&#39;s Layers of Scientific Software
+    url: /defactoring/021_hinsen-s-layers-of-scientific-software
+    not_numbered: true
+
+- title: Defactoring
+  url: /defactoring/030_defactoring
+  not_numbered: true
+
+- title: Pace of Change
+  url: /defactoring/040_pace-of-change
+  not_numbered: true
+
+- title: Defactoring in Practice
+  url: /defactoring/050_defactoring-in-practice
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Defactoring Code From Python Files to the Notebook
+    url: /defactoring/051_defactoring-code-from-python-files-to-the-notebook
+    not_numbered: true
+
+- title: How to Read the Defactoring Notebook
+  url: /defactoring/060_how-to-read-the-defactoring-notebook
+  not_numbered: true
+
+- title: Defactoring ‘Pace of Change’
+  url: /defactoring/070_defactoring-pace-of-change
+  not_numbered: true
+
+- title: Discussion and Conclusion
+  url: /defactoring/080_discussion-and-conclusion
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Representations of Data in and Through Code
+    url: /defactoring/081_representations-of-data-in-and-through-code
+    not_numbered: true
+  - title: What Defactoring as a Method Helps Us Understand
+    url: /defactoring/082_what-defactoring-as-a-method-helps-us-understand
+    not_numbered: true
+  - title: Method Made Material
+    url: /defactoring/083_method-made-material
+    not_numbered: true
+
+- title: References
+  url: /defactoring/090_references
+  not_numbered: true
+
+- divider: true

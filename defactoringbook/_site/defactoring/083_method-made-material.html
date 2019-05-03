@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Method Made Material</title>
+  <meta name="description" content="Method Made Material">
+
+  <link rel="canonical" href="/YOUR%20URL//defactoring/083_method-made-material.html">
+  <link rel="alternate" type="application/rss+xml" title="Defactoring ‘Pace of Change’" href="/YOUR%20URL//feed.xml">
+
+  <meta property="og:url"         content="/YOUR%20URL//defactoring/083_method-made-material.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Method Made Material" />
+<meta property="og:description" content="Method Made Material" />
+<meta property="og:image"       content="" />
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage":
+    "YOUR URL//defactoring/083_method-made-material.html",
+  "headline":
+    "Method Made Material",
+  "datePublished":
+    "2019-05-03T22:42:12+02:00",
+  "dateModified":
+    "2019-05-03T22:42:12+02:00",
+  "description":
+    "Method Made Material",
+  "author": {
+    "@type": "Person",
+    "name": "Matthew Burton and Joris van Zundert"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "YOUR URL/",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "YOUR URL/",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css ">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/images/logo/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    CommonHTML: {
+        linebreaks: {
+            automatic: true,
+        },
+    },
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML' async></script>
+
+  <!-- DOM updating function -->
+  <script>
+const runWhenDOMLoaded = cb => {
+  if (document.readyState != 'loading') {
+    cb()
+  } else if (document.addEventListener) {
+    document.addEventListener('DOMContentLoaded', cb)
+  } else {
+    document.attachEvent('onreadystatechange', function() {
+      if (document.readyState == 'complete') cb()
+    })
+  }
+}
+
+// Helper function to init things quickly
+initFunction = function(myfunc) {
+  runWhenDOMLoaded(myfunc);
+  document.addEventListener('turbolinks:load', myfunc);
+};
+</script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '/';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="/assets/js/anchor.min.js"  type="text/javascript"></script>
+  <script>
+
+initFunction(function () {
+    anchors.add("main h1, main h2, main h3, main h4")
+});
+
+</script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="/assets/js/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  <script src="https://unpkg.com/nbinteract-core" async></script>
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+<script type="text/x-thebe-config">
+    {
+      requestKernel: true,
+      binderOptions: {
+        repo: 'YOUR-ORG/YOUR-REPO',
+        ref: 'master',
+      },
+      kernelOptions: {
+        name: 'python3',
+      }
+    }
+</script>
+<script src="https://unpkg.com/thebelab@0.3.3/lib/index.js"></script>
+<script>
+    /**
+     * Add attributes to Thebelab blocks
+     */
+
+    const initThebelab = () => {
+        const addThebelabToCodeCells = () => {
+            console.log("Adding thebelab to code cells...");
+            // If Thebelab hasn't loaded, wait a bit and try again. This
+            // happens because we load ClipboardJS asynchronously.
+            if (window.thebelab === undefined) {
+                setTimeout(addThebelabToCodeCells, 250)
+            return
+            }
+
+            // If we already detect a Thebelab cell, don't re-run
+            if (document.querySelectorAll('div.thebelab-cell').length > 0) {
+                return;
+            }
+
+            // Find all code cells, replace with Thebelab interactive code cells
+            const codeCells = document.querySelectorAll('.input_area pre')
+            codeCells.forEach((codeCell, index) => {
+                const id = codeCellId(index)
+                codeCell.setAttribute('data-executable', 'true')
+
+                // Figure out the language it uses and add this too
+                var parentDiv = codeCell.parentElement.parentElement;
+                var arrayLength = parentDiv.classList.length;
+                for (var ii = 0; ii < arrayLength; ii++) {
+                    var parts = parentDiv.classList[ii].split('language-');
+                    if (parts.length === 2) {
+                        // If found, assign dataLanguage and break the loop
+                        var dataLanguage = parts[1];
+                        break;
+                    }
+                }
+                codeCell.setAttribute('data-language', dataLanguage)
+
+                // If the code cell is hidden, show it
+                var inputCheckbox = document.querySelector(`input#hidebtn${codeCell.id}`);
+                if (inputCheckbox !== null) {
+                    setCodeCellVisibility(inputCheckbox, 'visible');
+                }
+            });
+
+            // Remove the event listener from the page so keyboard press doesn't
+            // Change page
+            document.removeEventListener('keydown', initPageNav)
+            keyboardListener = false;
+
+            // Init thebelab
+            thebelab.bootstrap();
+
+            // Remove copy buttons since they won't work anymore
+            const copyButtons = document.querySelectorAll('.copybtn')
+            copyButtons.forEach((copyButton, index) => {
+                copyButton.remove();
+            });
+
+            // Remove outputs since they'll be stale
+            const outputs = document.querySelectorAll('.output *, .output')
+            outputs.forEach((output, index) => {
+                output.remove();
+            });
+        }
+
+        // Add event listener for the function to modify code cells
+        const thebelabButton = document.getElementById('interact-button-thebelab');
+        if (thebelabButton === null) {
+            setTimeout(initThebelab, 250)
+        return
+        };
+        thebelabButton.addEventListener('click', addThebelabToCodeCells);
+    }
+
+    // Initialize Thebelab
+    initFunction(initThebelab);
+</script>
+
+
+  <!-- Google analytics -->
+  <script src="/assets/js/ga.js" async></script>
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" async></script>
+
+  <!-- Load JS that depends on site variables -->
+  <script>
+/**
+ * Set up copy/paste for code blocks
+ */
+const codeCellId = index => `codecell${index}`
+
+const clipboardButton = id =>
+  `<a class="btn copybtn o-tooltip--left" data-tooltip="Copy" data-clipboard-target="#${id}">
+    <img src="/assets/images/copy-button.svg" alt="Copy to clipboard">
+  </a>`
+
+// Clears selected text since ClipboardJS will select the text when copying
+const clearSelection = () => {
+  if (window.getSelection) {
+    window.getSelection().removeAllRanges()
+  } else if (document.selection) {
+    document.selection.empty()
+  }
+}
+
+// Changes tooltip text for two seconds, then changes it back
+const temporarilyChangeTooltip = (el, newText) => {
+  const oldText = el.getAttribute('data-tooltip')
+  el.setAttribute('data-tooltip', newText)
+  setTimeout(() => el.setAttribute('data-tooltip', oldText), 2000)
+}
+
+const addCopyButtonToCodeCells = () => {
+  // If ClipboardJS hasn't loaded, wait a bit and try again. This
+  // happens because we load ClipboardJS asynchronously.
+  if (window.ClipboardJS === undefined) {
+    setTimeout(addCopyButtonToCodeCells, 250)
+    return
+  }
+
+  const codeCells = document.querySelectorAll('div.highlighter-rouge:not(.output) pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.querySelector(`pre#${id} + a`) == null) {
+      codeCell.insertAdjacentHTML('afterend', clipboardButton(id));
+    }
+  })
+
+  const clipboard = new ClipboardJS('.copybtn')
+  clipboard.on('success', event => {
+    clearSelection()
+    temporarilyChangeTooltip(event.trigger, 'Copied!')
+  })
+
+  clipboard.on('error', event => {
+    temporarilyChangeTooltip(event.trigger, 'Failed to copy')
+  })
+
+  // Get rid of clipboard before the next page visit to avoid memory leak
+  document.addEventListener('turbolinks:before-visit', () =>
+    clipboard.destroy()
+  )
+}
+
+initFunction(addCopyButtonToCodeCells);
+</script>
+
+  <!-- Hide cell code -->
+  
+<script>
+/**
+Add buttons to hide code cells
+*/
+
+
+var setCodeCellVisibility = function(inputField, kind) {
+    // Update the image and class for hidden
+    var id = inputField.getAttribute('data-id');
+    var codeCell = document.querySelector(`#${id}`);
+
+    if (kind === "visible") {
+        codeCell.classList.remove('hidden');
+        inputField.checked = true;
+    } else {
+        codeCell.classList.add('hidden');
+        inputField.checked = false;
+    }
+}
+
+var toggleCodeCellVisibility = function (event) {
+    // The label is clicked, and now we decide what to do based on the input field's clicked status
+    if (event.target.tagName === "LABEL") {
+        var inputField = event.target.previousElementSibling;
+    } else {
+        // It is the span inside the target
+        var inputField = event.target.parentElement.previousElementSibling;
+    }
+
+    if (inputField.checked === true) {
+        setCodeCellVisibility(inputField, "visible");
+    } else {
+        setCodeCellVisibility(inputField, "hidden");
+    }
+}
+
+
+// Button constructor
+const hideCodeButton = id => `<input class="hidebtn" type="checkbox" id="hidebtn${id}" data-id="${id}"><label title="Toggle cell" for="hidebtn${id}" class="plusminus"><span class="pm_h"></span><span class="pm_v"></span></label>`
+
+var addHideButton = function () {
+  // If a hide button is already added, don't add another
+  if (document.querySelector('div.hidecode input') !== null) {
+      return;
+  }
+
+  // Find the input cells and add a hide button
+  document.querySelectorAll('div.input_area div.highlight').forEach(function (item, index) {
+    if (!item.parentElement.classList.contains("hidecode")) {
+        // Skip the cell if it doesn't have a hidecode class
+        return;
+    }
+
+    const id = codeCellId(index)
+    item.setAttribute('id', id);
+    item.insertAdjacentHTML('afterend', hideCodeButton(id))
+
+    // Set up the visibility toggle
+    hideLink = document.querySelector(`#${id} + input + label`);
+    hideLink.addEventListener('click', toggleCodeCellVisibility)
+  });
+}
+
+
+// Initialize the hide buttos
+var initHiddenCells = function () {
+    // Add hide buttons to the cells
+    addHideButton();
+
+    // Toggle the code cells that should be hidden
+    document.querySelectorAll('div.hidecode input').forEach(function (item) {
+        setCodeCellVisibility(item, 'hidden');
+        item.checked = true;
+    })
+}
+
+initFunction(initHiddenCells);
+
+</script>
+
+
+  <!-- Load custom website scripts -->
+  <script src="/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="/assets/js/lunr/lunr.min.js" type="text/javascript"></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="https://jupyter.org/jupyter-book/"><img src="/images/logo/logo.png" class="textbook_logo" id="sidebar-logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">Defactoring ‘Pace of Change’</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/abstract.html"
+        >
+          
+          Summary
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="https://github.com/interedition/paceofchange"
+        >
+          
+          GitHub repository
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+        <li class="c-sidebar__chapter"><a class="c-sidebar__entry" href="/search.html">Search</a></li>
+        
+      
+      
+        <li class="c-sidebar__divider"></li>
+        
+      
+      
+        <li><h2 class="c-sidebar__title">Article Content</li>
+        
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/defactoring/010_introduction.html"
+        >
+          
+          Introduction
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/defactoring/020_reading-and-evaluating.html"
+        >
+          
+          Reading and Evaluating Code in Litrary Scholarship
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections ">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/defactoring/021_hinsen-s-layers-of-scientific-software.html"
+                >
+                  
+                  Hinsen&#39;s Layers of Scientific Software
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/defactoring/030_defactoring.html"
+        >
+          
+          Defactoring
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/defactoring/040_pace-of-change.html"
+        >
+          
+          Pace of Change
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/defactoring/050_defactoring-in-practice.html"
+        >
+          
+          Defactoring in Practice
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections ">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/defactoring/051_defactoring-code-from-python-files-to-the-notebook.html"
+                >
+                  
+                  Defactoring Code From Python Files to the Notebook
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/defactoring/060_how-to-read-the-defactoring-notebook.html"
+        >
+          
+          How to Read the Defactoring Notebook
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/defactoring/070_defactoring-pace-of-change.html"
+        >
+          
+          Defactoring ‘Pace of Change’
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/defactoring/080_discussion-and-conclusion.html"
+        >
+          
+          Discussion and Conclusion
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections ">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/defactoring/081_representations-of-data-in-and-through-code.html"
+                >
+                  
+                  Representations of Data in and Through Code
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/defactoring/082_what-defactoring-as-a-method-helps-us-understand.html"
+                >
+                  
+                  What Defactoring as a Method Helps Us Understand
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry c-sidebar__entry--active"
+                  href="/defactoring/083_method-made-material.html"
+                >
+                  
+                  Method Made Material
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/defactoring/090_references.html"
+        >
+          
+          References
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+        <li class="c-sidebar__divider"></li>
+        
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a></p>
+</nav>
+
+      
+      <!-- Shamelessly copied from minimal mistakes -->
+
+
+<!-- TOC will only show up if it has at least one item -->
+
+
+  <aside class="sidebar__right">
+    <nav class="onthispage">
+      <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
+      <ul class="toc__menu">
+  <li><a href="#method-made-material">Method Made Material</a></li>
+</ul>
+    </nav>
+  </aside>
+
+
+      
+      <main class="c-textbook__page" tabindex="-1">
+          <div class="o-wrapper">
+            <div class="c-sidebar-toggle">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <button
+    id="js-sidebar-toggle"
+    class="hamburger hamburger--arrowalt is-active"
+  >
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+    <span class="c-sidebar-toggle__label">Toggle Sidebar</span>
+  </button>
+</div>
+
+            
+
+            <div class="c-textbook__content">
+              <h3 id="method-made-material">Method Made Material</h3>
+
+<p>Defactoring reveals an important methodological aspect, as the
+‘binormal_select()’ case shows, about the relationship between mundane
+data management and urbane methodology, both are represented in code,
+but only the method is mentioned in the MLQ article. Underwood and
+Sellers chose not to use a more robust method for feature selection
+because they foresaw that the improved accuracy would not measure up to
+the effort required to explain it to an audience unfamiliar with more
+advanced statistics. There is a clear tension between the techniques
+being used and the explanation that must accompany them. From the
+comments in the code we can infer that at that point in time these
+research design issues were still relevant and the decision to go hither
+or whither hinged not only on which method would technically be better.
+Similarly in the MLQ publication and the Figshare contribution we find
+many allusions to the tweaking of the models that Underwood and Sellers
+used, but for which we do not find the full code anymore—for instance
+where they refer to including gender as a feature (2016:338) and to
+using multi period models (2016:329). Traces remain of these additional
+analyses in the code but supplanted by later code and workflows these
+statistical wanderings are not explicitly documented anymore.<sup id="fnref:4"><a href="#fn:4" class="footnote">1</a></sup></p>
+
+<p>In all this means that there is a lot of analysis and code-work that
+remains unrepresented. Even in a radically open project such as Pace of
+Change, there is still going to be code, data, and interpretive prose
+that does not make the final cut (i.e the MLQ article). Moreover, much
+analytic and code effort remains also invisible because it does not make
+the making of documentary that the final codebase could be regarded as,
+not leaving more than the odd trace, and left uninvestigated in a
+defactoring like ours.</p>
+
+<p>The invisibility of so many parts of the research narrative and effort
+signals to us again the very need for the development of a scholarly
+literacy that engages with the code level of research not as banal
+drudgery, but as the actual, material manifestation of methodology. Only
+by such deep and intimate code level understanding we can uncover and
+merit the full analytical effort that scholars undertake in
+computational explorations. We find that the insights that such close
+reading of code yields are relevant to development of methodology,
+techniques, and also training.</p>
+
+<p>In what respect is <em>Defactoring ‘Pace of Change’</em> a critical work? On a
+small scale, as we mentioned earlier, the representation of Ted
+Underwood and Jordan Sellers’ code that we produce may be compared to a
+critical scholarly edition of that code. Although a generally accepted
+strong definition of what constitutes a critical scholarly edition does
+not exist (cf. Gabler 1995:2–3), scholars tend to agree that a critical
+edition represent a text undergone scholarly scrutiny to establish
+scholarly curated text that is accompanied by an “apparatus criticus”
+that accounts for the actions and decisions of the scholarly editor that
+gave rise to the specific form in which the text is represented. In this
+sense the defactored code represented in this article stays close to
+this definition. At the same time the process of defactoring resulted
+very much in a restructuring especially the modularity of the original
+code, much more so than a scholarly editor would probably consider
+passable in the case of a scholarly edition. However, in the sense that
+every scholarly edition is also a theory about a text and an
+interpretation (Cerquiglini 1999), the defactored code is a textual
+critical and contextualized reading and interpretation of the code. We
+did not however make a <em>critique</em> of the code, nor of the content
+substance Underwood and Sellers present on the basis of this code in
+their MLQ article. We did not make a critique of their method, we are
+however validating what Underwood and Sellers argue in their MLQ article
+by comparing it to their code.</p>
+
+<p>The larger criticism that our defactoring experiment raises is that
+there is a clear gap between the narrative of the code and that of the
+MLQ article that Underwood and Sellers produced. This gap is rather
+enlarged than narrowed by the current conventions of scholarly
+publishing and communication. Much gets covered over between code and
+MLQ article. This gap is of a methodological nature. One of our
+reviewers argued that the code is not that interesting because scholars
+are primarily interested in the “underlying methodology”. If the
+breaking down of the walls between code and literary analysis serves
+anything it is that we think the gap suggests that there is such a thing
+as an “underlying methodology”, whereas we argue there is not. The code
+<em>is</em> the underlying thing. There is not some metaphysical intellectual
+method that does not have a material reality. If we read code we read
+method. Sure enough, a representation of the method as method is not a
+self-identical phenomenon, but method nonetheless. Probably the closest
+we can come to a meticulous registration of methods. Just as a
+publication is not self-identical with the text the authors had in mind,
+nor with the actual research, but it comes closest to representing
+these.</p>
+
+<p>Thus, code is methodology made material. Defactoring tells us more about
+the methods Underwood and Sellers apply than what is discussed in the
+MLQ article. Reading the methodological details in the code proved
+important to us to understand more exactly and more precisely what
+Underwood and Sellers had done. Close reading of code helps us to better
+understand what the successive transformations of the data actually add
+up to in the end. It made us see how insight and meaning arise from a
+series of tiny changes to data that in themselves are comprehensible and
+valid. As such reading the code adds to understanding and validation of
+the research by Sellers and Underwood. Defactoring traces that process
+of data to insight. Reading the code tells us how this process is
+materially instantiated. Method is not metaphysical, it is material and
+exists in this world. Defactoring makes it visible.</p>
+
+<p>This is a radical proposition that implies a disruptive intervention in
+the conventions of scholarly publishing and communication where data and
+computationally intensive works are concerned. Very rarely are the data
+and code incorporated directly into the prosaic narrative, why would
+they? Code is difficult to read, filled with banal boilerplate, and
+doesn’t contribute to an argument if it is expressed in a print-centric,
+static medium like a PDF or book. But when the documentary medium itself
+becomes a platform for the manipulation and execution of the code, of
+the material expression of methodological procedures <em>in-line</em> with the
+prosaic representations of the rhetorical procedure, then, we argue,
+there is value in positioning the code as a first-order expression of
+the methods deployed in data and computationally intensive research
+publications.</p>
+
+<p><em>Defactoring ‘Pace of Change’</em> is perhaps an unsuccessful attempt at
+achieving this vision. We have, given the tools at our disposal, tried
+to create a publication that represents what could be, and should be,
+possible. However, the platforms and the practices do not exist or have
+not come together to truly represent this idyllic confluence of prose,
+data, and code. <em>Defactoring ‘Pace of Change</em>’ leverages Jupyter
+Notebooks as a platform that affords the ability for both humans and
+machines to read the same document, but the platforms of publishing and
+reading such documents are non-existent or immature. Beyond platforms,
+there are research and publication practices, a set of conventions, that
+need to emerge where code is more seamlessly integrated into the
+narrative. Our reconfiguration of Underwood and Seller’s Python code
+into a linear narrative and the intermixing of prosaic descriptions,
+<em>defactoring</em> as a method, is an experiment in establishing new
+practices and conventions for computational narratives.</p>
+
+<p>Exploring the process of defactoring also taught us again that it is
+impossible to take data out of its analytical context without veritably
+rendering it meaningless. It is the context of code and argument that
+co-creates interpretation and meaning from data. Cultural Analytical
+insights are composed of three parts: the narrative, the data, and the
+code. We contend that you cannot evaluate, review, or critique the
+argument without attending to all three of these parts. Currently that
+seems a rather intractable goal, if it were only for the few scholars
+having the required skills, but also because publication platforms are
+still nascent (e.g. Jupyter Notebook) and the scholarly publishing
+infrastructure to support them is non-existent. However, we hope to have
+put forth defactoring as a step towards reaching that ideal.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:4">
+      <p>This also does not address Andrew Goldstone’s efforts to
+<a href="https://www.google.com/url?q=https://andrewgoldstone.com/blog/2016/01/04/standards/&amp;sa=D&amp;ust=1547653817150000&amp;usg=AFQjCNGGwS__xOQYjaCIKccwEEdHiPfcmw">reproduce <em>Pace of Change</em> in
+R</a>,
+which implies a form of methodological equivalence of materially
+dissimilar code bases. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+              <nav class="c-page__nav">
+  
+    
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/defactoring/082_what-defactoring-as-a-method-helps-us-understand">
+      〈 <span class="u-margin-right-tiny"></span> What Defactoring as a Method Helps...
+    </a>
+  
+
+  
+    
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/defactoring/090_references">
+      References <span class="u-margin-right-tiny"></span> 〉
+    </a>
+  
+</nav>
+
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </body>
+</html>
