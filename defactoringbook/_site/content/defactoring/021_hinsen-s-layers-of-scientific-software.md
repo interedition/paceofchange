@@ -38,7 +38,7 @@ plumbing connecting other layers together to accomplish a desired
 outcome. Unlike the previous layers, this code is not meant to be
 generalized or reused in other contexts.
 
-![Fig. 1: Hinsen's model of layers of scientific software](/images/fig_001_hinsen.png)
+![Fig. 1: Hinsen's model of layers of scientific software](../images/fig_001_hinsen.png)
 
 *Fig.1 : Hinsen's layers of scientific software*
 

@@ -54,7 +54,7 @@ restructured the code to be much more readable as a narrative with our
 own expository text intermixed with executable blocks of code.
 
 ![Fig.2: Defactoring code from python files to the
-notebook](/images/fig_002_defactoring.png)
+notebook](../images/fig_002_defactoring.png)
 
 *Fig.2: Defactoring code from python files to the
 notebook*
