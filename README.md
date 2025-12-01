@@ -30,4 +30,8 @@ pip install multiprocess
 
 Executing the entire notebook takes about 20 minutes on a reasonably modern laptop. It has been successfully executed in OS X, but not recently tested on Linux or Windows. 
 
+## December 2025 Update - Defactoring Theory Writeup
+
+Added `Theory - Defactoring Pace of Change - Submission.docx.pdf` which is a writeup of the theory behind the notebook. It was submitted to DHQ and they said it was accepted but never published. Shrug.
+
 
