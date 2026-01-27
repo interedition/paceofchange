@@ -1,0 +1,15 @@
+[project]
+name = "defactoring-pace-of-change"
+version = "1.0.0"
+description = "A defactored Jupyter Notebook implementation of Ted Underwood and Jordan Sellers' 'How Quickly Do Literary Standards Change?' analysis"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "scikit-learn",
+    "multiprocess",
+    "jupyter",
+    "ipykernel",
+]
