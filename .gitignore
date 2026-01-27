@@ -3,7 +3,7 @@ tmp
 .DS_Store
 docs/
 __pycache__
-
 mainmodelpredictions.coefs.csv
-
 mainmodelpredictions.csv
+Icon?
+.jupyter
